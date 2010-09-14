@@ -1,4 +1,5 @@
 RUNNER = dep/run/runner.js
+RUNNERAE3 = dep/run/runner-ae3.js
 TESTS = tests/*.js
 HTMLTESTS = tests/*.html
 RESULTS = results
@@ -7,7 +8,7 @@ WEB = web
 TALOS = talos
 PERFSINGLE = perf-single
 
-all: spidermonkey rhino tamarin jscore
+all: ae3 spidermonkey rhino tamarin jscore
 
 talos: web
 	@@ rm -rf ${TALOS}
@@ -107,3 +108,13 @@ clean:
 	@@ rm -rf ${PERFSINGLE}
 	@@ rm -rf ${RESULTS}
 	@@ rm -rf ${WEB}
+
+ae3: results ${TESTS}
+	@@ echo "" > ${RESULTS}/ae3.txt
+	@@ for i in ${TESTS}; do \
+		echo "Testing $${i} in AE3"; \
+		cat ${RUNNERAE3} ${RUNNER} "$${i}" > "$${i}.tmp"; \
+		./dep/run/ae3.sh JScriptAE3 "$${i}.tmp" >> ${RESULTS}/ae3.txt; \
+		rm -f "$${i}.tmp"; \
+	done
+
