@@ -58,12 +58,13 @@ perf-single: ${TESTS}
 
 results: ${TESTS}
 	@@ mkdir -p ${RESULTS}
-	@@ cp -f dep/results/* ${RESULTS}/
+	@@ cp -Rf dep/results/* ${RESULTS}/
 	@@ mkdir -p ${RESULTS}/spidermonkey
 	@@ mkdir -p ${RESULTS}/spidermonkey-patch
 	@@ mkdir -p ${RESULTS}/rhino
 	@@ mkdir -p ${RESULTS}/tamarin
 	@@ mkdir -p ${RESULTS}/jscore
+	@@ mkdir -p ${RESULTS}/ae3
 
 spidermonkey: results ${TESTS}
 	@@ echo "" > ${RESULTS}/spidermonkey.txt
