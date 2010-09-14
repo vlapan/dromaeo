@@ -1,2 +1,5 @@
 .DS_Store
 .Makefile.swp
+results/
+settings/
+tests/*.tmp
