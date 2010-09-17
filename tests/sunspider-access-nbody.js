@@ -21,7 +21,7 @@ Body.prototype.offsetMomentum = function(px,py,pz) {
    this.vy = -py / SOLAR_MASS;
    this.vz = -pz / SOLAR_MASS;
    return this;
-}
+};
 
 function Jupiter(){
    return new Body(
@@ -123,7 +123,7 @@ NBodySystem.prototype.advance = function(dt){
       body.y += dt * body.vy;
       body.z += dt * body.vz;
    }
-}
+};
 
 NBodySystem.prototype.energy = function(){
    var dx, dy, dz, distance;
@@ -149,7 +149,7 @@ NBodySystem.prototype.energy = function(){
       }
    }
    return e;
-}
+};
 
 startTest("sunspider-access-nbody");
 

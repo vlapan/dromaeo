@@ -176,7 +176,7 @@ Triangle.prototype.intersect = function(orig, dir, near, far) {
     if ((a2 + a3) > 1) 
         return null;
     return t;
-}
+};
 
 function Scene(a_triangles) {
     this.triangles = a_triangles;
@@ -239,7 +239,7 @@ Scene.prototype.intersect = function(origin, dir, near, far) {
         l = addVector(scaleVector(l, 1 - colour.reflection), scaleVector(reflected, colour.reflection));
     }
     return l;
-}
+};
 
 Scene.prototype.blocked = function(O, D, far) {
     var near = 0.0001;
@@ -253,7 +253,7 @@ Scene.prototype.blocked = function(O, D, far) {
     }
     
     return false;
-}
+};
 
 
 // this camera code is from notes i made ages ago, it is from *somewhere* -- i cannot remember where
@@ -287,7 +287,7 @@ Camera.prototype.generateRayPair = function(y) {
     rays[0].dir = addVector(scale(this.directions[0], y), scale(this.directions[3], 1 - y));
     rays[1].dir = addVector(scale(this.directions[1], y), scale(this.directions[2], 1 - y));
     return rays;
-}
+};
 
 function renderRows(camera, scene, pixels, width, height, starty, stopy) {
     for (var y = starty; y < stopy; y++) {
@@ -306,7 +306,7 @@ Camera.prototype.render = function(scene, pixels, width, height) {
     var cam = this;
     var row = 0;
     renderRows(cam, scene, pixels, width, height, 0, height);
-}
+};
 
 
 

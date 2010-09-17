@@ -34,14 +34,6 @@
 // The benchmark was originally implemented in BCPL by
 // Martin Richards.
 
-
-startTest("v8-richards");
-
-test("Richards", runRichards);
-
-endTest();
-
-
 /**
  * The Richards benchmark simulates the task dispatcher of an
  * operating system.
@@ -539,3 +531,11 @@ Packet.prototype.addTo = function (queue) {
 Packet.prototype.toString = function () {
   return "Packet";
 };
+
+
+
+startTest("v8-richards");
+
+test("Richards", runRichards);
+
+endTest();

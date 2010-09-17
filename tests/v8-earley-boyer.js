@@ -2058,7 +2058,7 @@ sc_Trampoline.prototype.restart = function() {
 	else
 	    return res;
     }
-}
+};
 
 /*** META ((export bind-exit-lambda)) */
 function sc_bindExitLambda(proc) {
@@ -2107,18 +2107,18 @@ sc_InputPort.prototype.peekChar = function() {
     if (!("peeked" in this))
 	this.peeked = this.getNextChar();
     return this.peeked;
-}
+};
 sc_InputPort.prototype.readChar = function() {
     var tmp = this.peekChar();
     delete this.peeked;
     return tmp;
-}
+};
 sc_InputPort.prototype.isCharReady = function() {
     return true;
-}
+};
 sc_InputPort.prototype.close = function() {
     // do nothing
-}
+};
 
 /* .............. String port ..........................*/
 function sc_ErrorInputPort() {
@@ -2696,10 +2696,10 @@ function sc_OutputPort() {
 sc_OutputPort.prototype = new sc_Port();
 sc_OutputPort.prototype.appendJSString = function(obj) {
     /* do nothing */
-}
+};
 sc_OutputPort.prototype.close = function() {
     /* do nothing */
-}
+};
 
 function sc_StringOutputPort() {
     this.res = "";
@@ -2707,10 +2707,10 @@ function sc_StringOutputPort() {
 sc_StringOutputPort.prototype = new sc_OutputPort();
 sc_StringOutputPort.prototype.appendJSString = function(s) {
     this.res += s;
-}
+};
 sc_StringOutputPort.prototype.close = function() {
     return sc_jsstring2string(this.res);
-}
+};
 
 /*** META ((export #t)) */
 function sc_getOutputString(sp) {
@@ -2723,10 +2723,10 @@ function sc_ErrorOutputPort() {
 sc_ErrorOutputPort.prototype = new sc_OutputPort();
 sc_ErrorOutputPort.prototype.appendJSString = function(s) {
     throw "don't write on ErrorPort!";
-}
+};
 sc_ErrorOutputPort.prototype.close = function() {
     /* do nothing */
-}
+};
 
 function sc_GenericOutputPort(appendJSString, close) {
     this.appendJSString = appendJSString;

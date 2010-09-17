@@ -1693,14 +1693,13 @@ var ilen, clen,
  subs = {
   B: '(c|g|t)', D: '(a|g|t)', H: '(a|c|t)', K: '(g|t)',
   M: '(a|c)', N: '(a|c|g|t)', R: '(a|g)', S: '(c|t)',
-  V: '(a|c|g)', W: '(a|t)', Y: '(c|t)' }
+  V: '(a|c|g)', W: '(a|t)', Y: '(c|t)' };
 
 ilen = dnaInput.length;
 
 // There is no in-place substitution
-dnaInput = dnaInput.replace(/>.*\n|\n/g,"")
-clen = dnaInput.length
-
+dnaInput = dnaInput.replace(/>.*\n|\n/g,"");
+clen = dnaInput.length;
 var dnaOutputString;
 
 startTest("sunspider-regexp-dna");
